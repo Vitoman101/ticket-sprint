@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ticket-sprint/static/css/main.3aeab39d.css",
-    "main.js": "/ticket-sprint/static/js/main.605c3b9a.js",
+    "main.js": "/ticket-sprint/static/js/main.7d3f8d5c.js",
     "index.html": "/ticket-sprint/index.html",
     "main.3aeab39d.css.map": "/ticket-sprint/static/css/main.3aeab39d.css.map",
-    "main.605c3b9a.js.map": "/ticket-sprint/static/js/main.605c3b9a.js.map"
+    "main.7d3f8d5c.js.map": "/ticket-sprint/static/js/main.7d3f8d5c.js.map"
   },
   "entrypoints": [
     "static/css/main.3aeab39d.css",
-    "static/js/main.605c3b9a.js"
+    "static/js/main.7d3f8d5c.js"
   ]
 }
