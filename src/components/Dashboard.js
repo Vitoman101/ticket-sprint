@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <div className="flex w-full bg-base-100">
       <div className="flex-grow mx-auto px-4 py-8">
-        <div className="flex gap-2 h-full">
+        <div className="flex flex-wrap md:flex-nowrap md:flex-row gap-2 h-full">
           {state.columnOrder.map((columnId, index) => {
             const column = state.columns[columnId];
             const tasks = column.taskIds.map((taskId) => state.tasks[taskId]);

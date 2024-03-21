@@ -18,7 +18,7 @@ const Column = ({ title, column, cards, setCards }) => {
       onDragOver={handleDragOver}
       onDragLeave={handleDragEnd}
       onDrop={() => setActive(false)}
-      className={`rounded-lg w-1/3 p-4 h-full ${
+      className={`rounded-lg w-full p-4 h-full ${
         active ? "bg-base-300" : "bg-base-200"
       }`}
     >
