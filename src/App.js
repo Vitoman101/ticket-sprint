@@ -14,7 +14,7 @@ function App() {
     <RecoilRoot>
       <Router>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/ticket-sprint" element={<Layout />}>
             <Route index element={<Dashboard />} />
           </Route>
         </Routes>
