@@ -9,3 +9,8 @@ export const openTicket = atom({
   key: "openTicket",
   default: false,
 });
+
+export const activeTickets = atom({
+  key: "activeTickets",
+  default: 0,
+});

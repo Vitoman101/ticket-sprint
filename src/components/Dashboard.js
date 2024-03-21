@@ -1,11 +1,18 @@
-import { useState } from "react";
 import ProfileModal from "./Dialogs/ProfileModal.js";
 import TicketModal from "./Dialogs/TicketModal.js";
 import NEW_TESTING_DATA from "./default-data.js";
 import Column from "./Column.js";
+import { useRecoilState } from "recoil";
+import { activeTickets } from "../atoms/modalAtom.js";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  const state = NEW_TESTING_DATA;
+  const [state, setState] = useState(NEW_TESTING_DATA);
+  const [tickets, setTickets] = useRecoilState(activeTickets);
+
+  useEffect(() => {
+    setTickets(Object.keys(NEW_TESTING_DATA.tasks).length);
+  }, [state]);
 
   return (
     <div className="flex w-full bg-base-100">
