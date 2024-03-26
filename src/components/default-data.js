@@ -26,17 +26,17 @@ const NEW_TESTING_DATA = {
     "column-1": {
       id: "column-1",
       title: "To do",
-      taskIds: ["task-1"],
+      taskIds: ["task-1", "task-2", "task-3"],
     },
     "column-2": {
       id: "column-2",
       title: "In Progress",
-      taskIds: ["task-2"],
+      taskIds: [],
     },
     "column-3": {
       id: "column-3",
       title: "Completed",
-      taskIds: ["task-3"],
+      taskIds: [],
     },
   },
   columnOrder: ["column-1", "column-2", "column-3"],

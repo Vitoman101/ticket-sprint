@@ -1,8 +1,10 @@
 import { useState } from "react";
 import AddCard from "./AddCard.js";
 import Card from "./Card.js";
+import { Droppable } from "react-beautiful-dnd";
+import StrictModeDroppable from "./Droppable/StrictModeDroppable.js";
 
-const Column = ({ title, column, cards, setCards }) => {
+const Column = ({ title, column, cards, setCards, id, index }) => {
   const [active, setActive] = useState(false);
 
   const handleDragOver = () => {
@@ -27,12 +29,23 @@ const Column = ({ title, column, cards, setCards }) => {
           <p className="font-bold =">{title}:</p>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-2">
-        {cards.map((task, index) => {
-          return <Card key={index} id={task.id} {...task} />;
-        })}
-        <AddCard />
-      </div>
+      <StrictModeDroppable droppableId={id} index={index} key={id}>
+        {(provided) => (
+          <div
+            className="grid grid-cols-1 gap-2"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {cards.map((task, index) => {
+              return (
+                <Card key={task.id} id={task.id} index={index} {...task} />
+              );
+            })}
+            <AddCard />
+            {provided.placeholder}
+          </div>
+        )}
+      </StrictModeDroppable>
     </div>
   );
 };
