@@ -19,7 +19,7 @@ const NEW_TESTING_DATA = {
       title: "Task 3",
       description: "Description for Task 3",
       status: "success",
-      due: "05/12/2025",
+      due: "02/12/2020",
     },
   },
   columns: {

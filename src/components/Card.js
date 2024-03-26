@@ -1,9 +1,12 @@
 import { useRecoilState } from "recoil";
 import { openTicket } from "../atoms/modalAtom";
 import { Draggable } from "react-beautiful-dnd";
+import { isPast } from "date-fns";
 
 const Card = ({ title, description, due, id, column, index }) => {
   let [isOpen, setIsOpen] = useRecoilState(openTicket);
+
+  const badgeStatusIsTaskLate = isPast(new Date(due));
 
   return (
     <Draggable draggableId={id} key={id} index={index}>
@@ -20,7 +23,12 @@ const Card = ({ title, description, due, id, column, index }) => {
             <p className="truncate">{description}</p>
             <div className="card-actions justify-end text-right items-center">
               <p className="font-thin text-xs">Due date: {due}</p>
-              <div className="badge badge-warning badge-sm"></div>
+              <div
+                className={
+                  "badge badge-sm " +
+                  (badgeStatusIsTaskLate ? "badge-error" : "badge-secondary")
+                }
+              ></div>
             </div>
           </div>
         </div>
@@ -28,9 +36,5 @@ const Card = ({ title, description, due, id, column, index }) => {
     </Draggable>
   );
 };
-
-function removecard() {
-  state;
-}
 
 export default Card;
