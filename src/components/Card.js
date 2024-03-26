@@ -10,7 +10,7 @@ const Card = ({ title, description, due, id, column, index }) => {
       {(provided) => (
         <div
           onClick={() => setIsOpen(true)}
-          className="card w-auto bg-base-100 shadow-xl cursor-grab active:cursor-grabbing p-2 hover:transition-transform hover:scale-105 active:scale-95"
+          className="card w-auto bg-base-100 shadow-xl cursor-grab active:cursor-grabbing p-2"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
